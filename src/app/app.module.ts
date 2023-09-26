@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ActualDayComponent } from './shared/components/meteorological/actual-day/actual-day.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     HomeComponent,
     ActualDayComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

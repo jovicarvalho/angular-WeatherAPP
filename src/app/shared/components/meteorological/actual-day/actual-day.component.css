@@ -1,0 +1,10 @@
+.actualDayComponent{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    color:white;
+}
+
+.searchBarComponent{
+    
+}
