@@ -1,7 +1,20 @@
 <section>
-    <h3>Pesquise a Cidade</h3>
-    <input 
-    class="searchBar"
-    type="search">
+    <h3>Pesquise a cidade 
+        <div class="locationAndSearchBar" >
+            <div class="searchIconAndBar">
+                <i class="searchIcon"></i>
+                <input
+                class="searchBar"
+                type="search"
+                >
+            </div>
+            <div class=iconLocation>
+                <img [ngClass]="setIconLocation()" src="/assets/location.svg">
+
+            </div>
+        </div>
+       
+    </h3>
+   
 
 </section>
