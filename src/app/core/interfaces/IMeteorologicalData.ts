@@ -1,4 +1,4 @@
-interface MeteorologicalData{ 
+export interface MeteorologicalData{ 
     id: string,
     city: string,
     weatherDate: string,

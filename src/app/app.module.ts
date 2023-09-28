@@ -8,6 +8,8 @@ import { ActualDayComponent } from './shared/components/meteorological/actual-da
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
+import { MeteorologicalDataServiceService } from './core/services/meteorological-data-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { SearchBarComponent } from './shared/components/search-bar/search-bar.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
