@@ -47,4 +47,15 @@ textarea:focus, input:focus, select:focus {
     display: flex;
     align-items: center;
 }
+::placeholder{
+    color: #bdbebd
+}
 
+
+.mensagem__erro {
+    font-size: 18px;
+    margin-left: 5px;
+    color: yellow;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
