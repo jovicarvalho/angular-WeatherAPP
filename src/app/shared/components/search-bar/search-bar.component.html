@@ -1,0 +1,23 @@
+<section>
+    <h3>Pesquise a cidade 
+        <div class="locationAndSearchBar" >
+            <div class="searchIconAndBar">
+                <i (click)="buscarDiaAtualNaCidade()" class="searchIcon"></i>
+                <input
+                class="searchBar"
+                type="search"
+                placeholder="Digite o nome da Cidade"
+                [(ngModel)]="cityName"
+                (keyup.enter)="buscarDiaAtualNaCidade()"
+                (keyup)="buscarDiaAtualNaCidade()"
+                >
+            </div>
+            <div class=iconLocation>
+                <img [ngClass]="setIconLocation()" src="/assets/location.svg">
+            </div>
+        </div>
+    </h3>
+    <div class="mensagem__erro" *ngIf="errorWasThrown">
+        Cidade não encontrada.
+    </div>
+</section>
