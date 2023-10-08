@@ -1,5 +1,5 @@
 export interface MeteorologicalData{ 
-    id: string,
+    id?: string,
     city: string,
     weatherDate: string,
     morningWeather: string,
