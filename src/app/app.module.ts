@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { CreateMeteorologicalDataComponent } from './pages/create-meteorological-data/create-meteorological-data.component';
 import { ButtonComponent } from './shared/components/button/button.component';
+import {ToastrModule} from "ngx-toastr";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { ButtonComponent } from './shared/components/button/button.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
