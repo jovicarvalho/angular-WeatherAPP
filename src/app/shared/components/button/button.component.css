@@ -1,0 +1,17 @@
+button{
+    border-radius:100px;
+    background-image: linear-gradient(rgba(149, 125, 205),rgba(82, 61, 127));
+    margin-top: 5vb;
+    margin-bottom:3vb;
+    height: 58px;
+    color: white;
+    width: 274px;
+    border: none;
+    margin-left: 30px;
+    cursor:pointer;
+}
+
+button:hover{
+    background-image: linear-gradient(rgba(149, 125, 205,0.5),rgba(82, 61, 127));
+}
+

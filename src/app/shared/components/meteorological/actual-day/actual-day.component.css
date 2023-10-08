@@ -33,6 +33,7 @@
 .weatherImg{
     width: 50%;
     height: 70%;
+    max-height: 250px;
     min-width: 100px;
     margin-right: 10%;
 }
