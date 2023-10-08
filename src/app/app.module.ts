@@ -10,7 +10,9 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 import { MeteorologicalDataService } from './core/services/meteorological-data.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { CreateMeteorologicalDataComponent } from './pages/create-meteorological-data/create-meteorological-data.component';
+import { ButtonComponent } from './shared/components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { FormsModule } from '@angular/forms';
     ActualDayComponent,
     HeaderComponent,
     FooterComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    CreateMeteorologicalDataComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
