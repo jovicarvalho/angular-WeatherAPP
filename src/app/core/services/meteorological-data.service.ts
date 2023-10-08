@@ -36,4 +36,8 @@ export class MeteorologicalDataService implements IMeteorologicalDataService {
         })
       );
     }
-  }
+
+    postMeteorologicalData(body:MeteorologicalData):Observable<MeteorologicalData>{
+      return this.http.post<MeteorologicalData>(this.API,body)
+    }
+}
