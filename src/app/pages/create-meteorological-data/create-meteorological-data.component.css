@@ -190,7 +190,7 @@ option:checked {
     flex-wrap: wrap;
     display: flex;
     flex-direction: row-reverse;
-    align-items: end;
+    align-items: flex-end;
 }
 
 
