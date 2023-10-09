@@ -15,6 +15,8 @@ import { CreateMeteorologicalDataComponent } from './pages/create-meteorological
 import { ButtonComponent } from './shared/components/button/button.component';
 import {ToastrModule} from "ngx-toastr";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListWeatherComponent } from './pages/list-weather/list-weather.component';
+import { WeatherComponent } from './shared/components/meteorological/weather/weather.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     SearchBarComponent,
     CreateMeteorologicalDataComponent,
-    ButtonComponent
+    ButtonComponent,
+    ListWeatherComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
