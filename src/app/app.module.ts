@@ -17,6 +17,8 @@ import {ToastrModule} from "ngx-toastr";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListWeatherComponent } from './pages/list-weather/list-weather.component';
 import { WeatherComponent } from './shared/components/meteorological/weather/weather.component';
+import { DeleteWeatherComponent } from './shared/components/meteorological/delete-weather/delete-weather.component';
+import { EditWeatherComponent } from './shared/components/meteorological/edit-weather/edit-weather.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { WeatherComponent } from './shared/components/meteorological/weather/wea
     CreateMeteorologicalDataComponent,
     ButtonComponent,
     ListWeatherComponent,
-    WeatherComponent
+    WeatherComponent,
+    DeleteWeatherComponent,
+    EditWeatherComponent
   ],
   imports: [
     BrowserModule,
