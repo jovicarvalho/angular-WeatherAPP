@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { MeteorologicalData } from 'src/app/core/interfaces/IMeteorologicalData';
+import { MeteorologicalDataService } from 'src/app/core/services/meteorological-data.service';
 
 @Component({
   selector: 'app-list-weather',
@@ -7,9 +10,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListWeatherComponent implements OnInit {
 
-  constructor() { }
+
+  listOfCitys:MeteorologicalData[] = [];
+  
+  pageNumber: number = 1;
+
+  cityName:string="";
+
+  constructor(
+    private service: MeteorologicalDataService,
+    private toastr: ToastrService
+    ) { }
+  skip:number = 0;
 
   ngOnInit(): void {
+    this.service.getAll(this.skip).subscribe((listOfCitys)=>{
+      this.listOfCitys = listOfCitys;
+    })
+  }
+
+  buscarCidade(){
+    this.service.getByCity(this.cityName).subscribe((listOfCitys)=>{
+      this.listOfCitys = listOfCitys})
+  
+    if(this.cityName== "" ){
+      this.service.getAll(this.skip).subscribe((listOfCitys)=>{
+        this.listOfCitys = listOfCitys;
+      })
+    }
+  }
+
+  advance(){
+    this.skip++
+    this.pageNumber++
+    this.service.getAll(this.skip).subscribe((listOfCitys)=>{
+      this.listOfCitys = listOfCitys;
+    })
+  }
+
+  recede(){
+    if(this.pageNumber>1 && this.cityName== ""){
+    this.skip--
+    this.pageNumber--
+    this.service.getAll(this.skip).subscribe((listOfCitys)=>{
+      this.listOfCitys = listOfCitys;
+    })}else if(this.pageNumber>1 && this.cityName != ""){
+      this.skip--
+      this.pageNumber--
+      this.service.getByCity(this.cityName).subscribe((listOfCitys)=>{
+        this.listOfCitys = listOfCitys;
+      })
+    }else{
+      this.toastr.info("Você já está na página 1", "Impossível Retroceder")
+    }
   }
 
 }

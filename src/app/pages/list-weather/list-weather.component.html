@@ -1,2 +1,27 @@
-<p>list-weather works!</p>
-<app-weather></app-weather>
+<div class="listAll">
+    <h2>Lista de Cidades</h2>
+    <div>
+        <h3>Cidade</h3>
+        <div class="searchBar">
+            <input
+            [(ngModel)]="cityName"
+            (keyup)="buscarCidade()"
+            >
+            <i> <img src="assets/searchIconListPage.svg"></i>
+
+        </div>
+    </div>
+    <div class="listWeather">
+        <div *ngFor="let weatherInCity of listOfCitys">
+                <app-weather
+                [weather]="weatherInCity"
+                >
+                </app-weather>
+        </div>
+    </div>
+    <div class="pageAndButtons">
+        <button (click)="recede()"> < </button>
+        <h3> Página {{pageNumber}}</h3>
+        <button (click)="advance()"> > </button>
+    </div>
+</div>
