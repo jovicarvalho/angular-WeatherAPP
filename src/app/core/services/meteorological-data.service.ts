@@ -40,4 +40,10 @@ export class MeteorologicalDataService implements IMeteorologicalDataService {
     postMeteorologicalData(body:MeteorologicalData):Observable<MeteorologicalData>{
       return this.http.post<MeteorologicalData>(this.API,body)
     }
+
+
+    getAll(skip:number):Observable<MeteorologicalData[]>{
+      let params = new HttpParams().set('skip', skip)
+      return this.http.get<MeteorologicalData[]>(`${this.API}all/`, {params})
+    }
 }
