@@ -1,0 +1,28 @@
+.weather{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    color: white;
+    align-items: center;
+    background-image: linear-gradient(rgba(149, 125, 205, 0.5),rgba(82, 61, 127,  0.5));
+    border-radius: 15px;
+    margin-bottom: 10px;
+
+}
+.city{
+    margin-left: 4vb;
+    width: 45%;
+}
+button{
+    background: none;
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+     transform: scale(1.1);
+}
+
+.weatherDate{
+    width: 40%;
+}
