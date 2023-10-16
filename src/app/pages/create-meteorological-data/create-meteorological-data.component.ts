@@ -69,5 +69,9 @@ export class CreateMeteorologicalDataComponent implements OnInit {
     })}else{
       this.toastr.error('Preencha todos os campos corretamente!');
   }}
+
+  cancelCreate(){
+    this.toastr.info('Você limpou os dados.', "Criação Cancelada")
+  }
       
 }
