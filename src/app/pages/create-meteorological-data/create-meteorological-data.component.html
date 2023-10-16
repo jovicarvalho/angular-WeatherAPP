@@ -1,4 +1,4 @@
-<div class="createPage">
+<div class="createPage fade-in">
     <h1>Cadastro Meteorológico</h1>
     <form [formGroup]="weather">
         <div class="cityAndDate">
@@ -133,14 +133,18 @@
         <div class="buttons">
         <button
         type="reset"
+        title="Cancelar"
+        (click)="cancelCreate()"
         >
             Cancelar
         </button>
         <button
         type="submit"
         (click)="createWeather()"
+        title="Salvar"
         >
         Salvar
         </button>
+    </div>
+    </form>
 </div>
-</form>
