@@ -19,6 +19,8 @@ import { ListWeatherComponent } from './pages/list-weather/list-weather.componen
 import { WeatherComponent } from './shared/components/meteorological/weather/weather.component';
 import { DeleteWeatherComponent } from './shared/components/meteorological/delete-weather/delete-weather.component';
 import { EditWeatherComponent } from './shared/components/meteorological/edit-weather/edit-weather.component';
+import { SevenDaysListComponent } from './shared/components/meteorological/seven-days-list/seven-days-list.component';
+import { WeatherHomeComponent } from './shared/components/meteorological/weather-home/weather-home.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { EditWeatherComponent } from './shared/components/meteorological/edit-we
     ListWeatherComponent,
     WeatherComponent,
     DeleteWeatherComponent,
-    EditWeatherComponent
+    EditWeatherComponent,
+    SevenDaysListComponent,
+    WeatherHomeComponent
   ],
   imports: [
     BrowserModule,
