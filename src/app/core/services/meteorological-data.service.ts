@@ -4,6 +4,7 @@ import { MeteorologicalData } from '../interfaces/IMeteorologicalData';
 import {Observable , throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {IMeteorologicalDataService} from '../interfaces/services/IMeteorologicalDataService'
+import { IPagenableList } from '../interfaces/IPagenableList';
 
 
 @Injectable({
@@ -22,6 +23,10 @@ export class MeteorologicalDataService implements IMeteorologicalDataService {
     return this.http.get<MeteorologicalData[]>(this.API,{params})
   }
 
+  getById(id:string):Observable<MeteorologicalData>{
+    return this.http.get<MeteorologicalData>(this.API + id)
+  };
+
  
   getActualDayinCity(city: string): Observable<MeteorologicalData> {
       let params = new HttpParams().set('cityName', city);
@@ -39,5 +44,21 @@ export class MeteorologicalDataService implements IMeteorologicalDataService {
 
     postMeteorologicalData(body:MeteorologicalData):Observable<MeteorologicalData>{
       return this.http.post<MeteorologicalData>(this.API,body)
+    }
+
+
+    getAll(skip:number):Observable<IPagenableList>{
+      let params = new HttpParams().set('skip', skip)
+      return this.http.get<IPagenableList>(`${this.API}all/`, {params})
+    }
+
+
+    delete(id: string):Observable<any>{
+      return this.http.delete(`${this.API}${id}`);
+    }
+
+
+    editById(id:string, body:MeteorologicalData):Observable<MeteorologicalData>{
+      return this.http.put<MeteorologicalData>(this.API + id, body)
     }
 }

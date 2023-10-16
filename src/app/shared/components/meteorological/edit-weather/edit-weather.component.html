@@ -1,5 +1,5 @@
-<div class="createPage fade-in">
-    <h1>Cadastro Meteorológico</h1>
+<div class="createPage">
+    <h1>Edição de dado meteorológico</h1>
     <form [formGroup]="weather">
         <div class="cityAndDate">
             <div class="city"> 
@@ -132,19 +132,17 @@
         </div>
         <div class="buttons">
         <button
-        type="reset"
-        title="Cancelar"
-        (click)="cancelCreate()"
+        [routerLink]="['/list']"
+        (click)="cancelNotification()"
         >
             Cancelar
         </button>
         <button
         type="submit"
-        (click)="createWeather()"
-        title="Salvar"
+        (click)="editWeather()"
         >
-        Salvar
+            Atualizar
         </button>
-    </div>
+        </div>
     </form>
 </div>

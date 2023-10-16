@@ -218,17 +218,3 @@ button:hover{
     color: yellow;
     margin-bottom: 20px;
   }
-
-  
-.fade-in {
-    animation: fadeIn 3s ease; 
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-}

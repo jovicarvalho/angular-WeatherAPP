@@ -13,6 +13,20 @@
 }
 
 img{
-    width: 3%;
     margin-left: 1%;
+    height: 70%;
+    max-width: 50px;
+}
+
+.fade-in {
+    animation: fadeIn 3s ease; 
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
 }

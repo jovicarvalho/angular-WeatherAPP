@@ -2,14 +2,14 @@
     <h3>Pesquise a cidade 
         <div class="locationAndSearchBar" >
             <div class="searchIconAndBar">
-                <i (click)="buscarDiaAtualNaCidade()" class="searchIcon"></i>
+                <i (click)="search()" class="searchIcon"></i>
                 <input
                 class="searchBar"
                 type="search"
                 placeholder="Digite o nome da Cidade"
                 [(ngModel)]="cityName"
-                (keyup.enter)="buscarDiaAtualNaCidade()"
-                (keyup)="buscarDiaAtualNaCidade()"
+                (keyup.enter)="search()"
+                (keyup)="search()"
                 >
             </div>
             <div class=iconLocation>
@@ -17,7 +17,10 @@
             </div>
         </div>
     </h3>
-    <div class="mensagem__erro" *ngIf="errorWasThrown">
+    <div class="mensagem__erro" *ngIf="errorWasThrown && !errorSevenDays">
+        Cidade não possui dia atual cadastrado.
+    </div>
+    <div class="mensagem__erro" *ngIf="errorSevenDays">
         Cidade não encontrada.
     </div>
 </section>

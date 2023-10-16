@@ -15,6 +15,12 @@ import { CreateMeteorologicalDataComponent } from './pages/create-meteorological
 import { ButtonComponent } from './shared/components/button/button.component';
 import {ToastrModule} from "ngx-toastr";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListWeatherComponent } from './pages/list-weather/list-weather.component';
+import { WeatherComponent } from './shared/components/meteorological/weather/weather.component';
+import { DeleteWeatherComponent } from './shared/components/meteorological/delete-weather/delete-weather.component';
+import { EditWeatherComponent } from './shared/components/meteorological/edit-weather/edit-weather.component';
+import { SevenDaysListComponent } from './shared/components/meteorological/seven-days-list/seven-days-list.component';
+import { WeatherHomeComponent } from './shared/components/meteorological/weather-home/weather-home.component';
 
 
 @NgModule({
@@ -26,7 +32,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     SearchBarComponent,
     CreateMeteorologicalDataComponent,
-    ButtonComponent
+    ButtonComponent,
+    ListWeatherComponent,
+    WeatherComponent,
+    DeleteWeatherComponent,
+    EditWeatherComponent,
+    SevenDaysListComponent,
+    WeatherHomeComponent
   ],
   imports: [
     BrowserModule,

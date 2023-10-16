@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MeteorologicalDataService } from 'src/app/core/services/meteorological-data.service';
 import {ToastrService} from 'ngx-toastr';
-import { ChangeDetectorRef } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -21,7 +20,6 @@ export class CreateMeteorologicalDataComponent implements OnInit {
     private formbuilder: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
-    private cdr: ChangeDetectorRef
     ) { }
 
   ngOnInit(): void {
@@ -71,5 +69,9 @@ export class CreateMeteorologicalDataComponent implements OnInit {
     })}else{
       this.toastr.error('Preencha todos os campos corretamente!');
   }}
+
+  cancelCreate(){
+    this.toastr.info('Você limpou os dados.', "Criação Cancelada")
+  }
       
 }

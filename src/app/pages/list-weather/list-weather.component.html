@@ -1,0 +1,27 @@
+<div class="listAll fade-in">
+    <h2>Lista de Cidades</h2>
+    <div>
+        <h3>Cidade</h3>
+        <div class="searchBar">
+            <input
+            [(ngModel)]="cityName"
+            (keyup)="buscarCidade()"
+            >
+            <i> <img src="assets/searchIconListPage.svg"></i>
+
+        </div>
+    </div>
+    <div class="listWeather">
+        <div *ngFor="let weatherInCity of listOfCitys">
+                <app-weather
+                [weather]="weatherInCity"
+                >
+                </app-weather>
+        </div>
+    </div>
+    <div class="pageAndButtons">
+        <button title="Retroceder" (click)="recede()"> < </button>
+        <h3> Página {{pageNumber}} de {{totalPages}}</h3>
+        <button title="Avançar" (click)="advance()"> > </button>
+    </div>
+</div>

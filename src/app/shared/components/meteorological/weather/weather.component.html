@@ -1,0 +1,10 @@
+<div class="weather">
+    <p class="city">{{weather.city}}</p>
+    <div class="weatherDate">
+        <p>{{weather.weatherDate | date:'dd/MM/yyyy'}}</p> <!-- datepipe do angular -->
+    </div>
+    <div>
+        <button title="Editar" routerLink="/weathers/editWeather/{{weather.id}}"><img src="/assets/edit.svg"></button>
+        <button title="Deletar" routerLink="/weathers/deleteWeather/{{weather.id}}"><img src="/assets/delete.svg"></button>
+    </div>
+</div>
