@@ -24,7 +24,7 @@
     width: 100%;
     background-image: linear-gradient(rgba(149, 125, 205, 0.5),rgba(82, 61, 127,  0.5)) ;
     border-radius: 15px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -94,4 +94,22 @@
 .precipitation a,.humidity a,.windSpeed a{
     justify-content: center;
     margin-bottom: 5%;
+}
+
+.sevenDays{
+    justify-content: center;
+    width: 80%;
+}
+
+.fade-in {
+    animation: fadeIn 4s ease; 
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
 }

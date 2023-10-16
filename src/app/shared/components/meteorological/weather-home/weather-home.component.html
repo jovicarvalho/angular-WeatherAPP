@@ -1,0 +1,13 @@
+<div class="weather">
+    <p>{{weather.weatherDate | date:'dd/MM/yyyy'}}</p>
+    <div class="weatherImgAndText">
+        <div>
+            <img src={{changeWeatherIcon()}}>
+        </div>
+        <p>{{changeTextWeather()}}</p>
+    </div>
+    <div class="temperatures">
+        <p>{{minSignal()}}{{weather.minTemperature}}</p>
+        <p>{{maxSignal()}}{{weather.maxTemperature}}</p>
+    </div>
+</div>

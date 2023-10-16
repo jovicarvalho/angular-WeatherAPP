@@ -1,9 +1,12 @@
-<section class="actualDayComponent">
+<section class="actualDayComponent fade-in">
     <div class="title">
         <h1>{{verifyifCityExistReturnsTitle()}}</h1>
     </div>
     <div class="searchBarComponent">
-        <app-search-bar (actualDay)="receberDiaAtual($event)" ></app-search-bar>
+        <app-search-bar 
+        (actualDay)="receberDiaAtual($event)"
+        (sevenDays)="recieveSevenDays($event)"
+        ></app-search-bar>
     </div>
     <div class="actualDaybox">
         <div class="weatherImgAndTemperature">
@@ -32,5 +35,10 @@
             </div>
         </div>
     </div>
+  
 
 </section>
+
+<div class="sevenDays fade-in">
+    <app-seven-days-list [sevenDays]="sevenDays" ></app-seven-days-list>
+</div>

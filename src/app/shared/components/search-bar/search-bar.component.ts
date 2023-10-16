@@ -25,27 +25,42 @@ export class SearchBarComponent implements OnInit {
   @Output() listaMeteorologicaldata: MeteorologicalData[] = [];
   
   @Output() actualDay = new EventEmitter<MeteorologicalData>();
+
+  @Output() sevenDays = new EventEmitter<MeteorologicalData[]>();
+
   cityName:string = "";
   errorWasThrown:boolean = false;
+  errorSevenDays:boolean=false
 
-  //buscarCidade(){
-    //this.service.getByCity(this.cityName).subscribe(listaCidade=>{
-      //this.today.emit(listaCidade)
-    //})
-  //}
-
-
-  buscarDiaAtualNaCidade() {
-    if (this.cityName.length > 3)
+  searchActualDayInCity() {
      this.service.getActualDayinCity(this.cityName).subscribe({
-      next:(cidade) => {
-        this.actualDay.emit(cidade);
+      next:(city) => {
+        this.actualDay.emit(city);
         this.errorWasThrown = false;
       },
       error:(error) => {
         this.errorWasThrown = true;
       }}
     );
+  }
+
+  searchSevenDays() {
+     this.service.getByCity(this.cityName).subscribe({
+      next:(citys) => {
+        this.sevenDays.emit(citys);
+        this.errorSevenDays = false;
+      },
+      error:(error) => {
+        this.errorSevenDays = true;
+      }}
+    );
+  }
+  
+  search(){
+    if (this.cityName.length > 3){
+      this.searchSevenDays();
+      this.searchActualDayInCity();
+    }
   }
 
   @Input() setIconLocationParameter:boolean = true;

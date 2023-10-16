@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { MeteorologicalData } from 'src/app/core/interfaces/IMeteorologicalData';
 
 @Component({
@@ -26,6 +26,11 @@ export class ActualDayComponent implements OnInit {
 		windSpeed: 0
   };
 
+  listar(){
+    console.log(this.sevenDays);
+  }
+  @Output() sevenDays: MeteorologicalData[] = [];
+
   verifyifCityExistReturnsTitle():string{
     if (this.todayMeteorologicalData.id !== "") {return `Hoje em ${this.todayMeteorologicalData.city}` }
     return `Hoje`
@@ -34,6 +39,11 @@ export class ActualDayComponent implements OnInit {
   receberDiaAtual(respostafilho:MeteorologicalData){
       this.todayMeteorologicalData = respostafilho
   }
+
+  recieveSevenDays(respostafilho:MeteorologicalData[]){
+    this.sevenDays = respostafilho;
+  }
+
   setIconLocationParameter:boolean=false
 
   changeWeatherIcon():string{
@@ -53,7 +63,7 @@ export class ActualDayComponent implements OnInit {
       case "CLOUDY": return"/assets/weatherIcons/nubladoNoite.svg";
       case "RAINING": return"/assets/weatherIcons/chuvaNoite.svg";
     }
-    return "/assets/weatherIcons/search.png"
+    return "/assets/weatherIcons/weatherGif/lupa.gif"
   }
 
 }
