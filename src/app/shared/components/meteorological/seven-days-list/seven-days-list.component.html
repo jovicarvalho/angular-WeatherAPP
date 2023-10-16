@@ -1,0 +1,8 @@
+<section>
+    <div *ngFor="let weatherInCity of sevenDays"  class="listOfWeathers fade-in ">
+        <app-weather-home
+        [weather]="weatherInCity"
+        >
+        </app-weather-home>
+    </div>
+</section> 
