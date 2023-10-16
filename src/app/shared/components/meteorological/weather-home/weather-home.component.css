@@ -1,0 +1,28 @@
+.weather{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.temperatures{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.temperatures p {
+    margin-left: 20px;
+    text-align: end;
+}
+
+.weatherImgAndText{
+    display:flex;
+}
+.weatherImgAndText img{
+    width: 80%;
+    max-width: 100px;
+    align-self: start;
+    display: flex;
+    min-width: 50px
+}
