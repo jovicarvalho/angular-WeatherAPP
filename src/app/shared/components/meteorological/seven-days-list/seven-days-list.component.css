@@ -1,0 +1,25 @@
+.listOfWeathers{
+    margin-left: 30%;
+    color:white
+}
+
+@media (max-width:600px){
+    .listOfWeathers{
+        margin-left: 10%;
+        color:white
+    }
+}
+
+
+.fade-in {
+    animation: fadeIn 1.5s ease; 
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
