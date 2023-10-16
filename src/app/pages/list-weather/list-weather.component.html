@@ -1,4 +1,4 @@
-<div class="listAll">
+<div class="listAll fade-in">
     <h2>Lista de Cidades</h2>
     <div>
         <h3>Cidade</h3>
@@ -20,8 +20,8 @@
         </div>
     </div>
     <div class="pageAndButtons">
-        <button (click)="recede()"> < </button>
-        <h3> Página {{pageNumber}}</h3>
-        <button (click)="advance()"> > </button>
+        <button title="Retroceder" (click)="recede()"> < </button>
+        <h3> Página {{pageNumber}} de {{totalPages}}</h3>
+        <button title="Avançar" (click)="advance()"> > </button>
     </div>
 </div>

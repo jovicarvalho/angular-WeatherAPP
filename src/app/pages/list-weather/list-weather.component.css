@@ -57,3 +57,16 @@ textarea:focus, input:focus, select:focus {
     cursor: pointer;
      transform: scale(1.1);
 }
+
+.fade-in {
+    animation: fadeIn 4s ease; 
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}

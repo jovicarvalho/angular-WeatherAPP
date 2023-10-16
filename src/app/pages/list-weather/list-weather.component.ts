@@ -14,6 +14,7 @@ export class ListWeatherComponent implements OnInit {
   listOfCitys:MeteorologicalData[] = [];
   
   pageNumber: number = 1;
+  totalPages:number = 1;
 
   cityName:string="";
 
@@ -24,8 +25,9 @@ export class ListWeatherComponent implements OnInit {
   skip:number = 0;
 
   ngOnInit(): void {
-    this.service.getAll(this.skip).subscribe((listOfCitys)=>{
-      this.listOfCitys = listOfCitys;
+    this.service.getAll(this.skip).subscribe((pagenableList)=>{
+      this.listOfCitys = pagenableList.weathers;
+      this.totalPages = pagenableList.totalPages;
     })
   }
 
@@ -35,25 +37,31 @@ export class ListWeatherComponent implements OnInit {
   
     if(this.cityName== "" ){
       this.service.getAll(this.skip).subscribe((listOfCitys)=>{
-        this.listOfCitys = listOfCitys;
+        this.listOfCitys = listOfCitys.weathers;
       })
     }
   }
 
   advance(){
+    if(this.pageNumber < this.totalPages){
     this.skip++
-    this.pageNumber++
     this.service.getAll(this.skip).subscribe((listOfCitys)=>{
-      this.listOfCitys = listOfCitys;
-    })
+      this.listOfCitys = listOfCitys.weathers;
+      this.pageNumber++
+    })}else if(this.pageNumber = this.totalPages){
+      this.toastr.info("","Não há mais páginas disponíveis")
+    }
   }
 
+    
+   
+
   recede(){
-    if(this.pageNumber>1 && this.cityName== ""){
+    if(this.pageNumber>1 && this.cityName== ""){  
     this.skip--
     this.pageNumber--
     this.service.getAll(this.skip).subscribe((listOfCitys)=>{
-      this.listOfCitys = listOfCitys;
+      this.listOfCitys = listOfCitys.weathers;
     })}else if(this.pageNumber>1 && this.cityName != ""){
       this.skip--
       this.pageNumber--
