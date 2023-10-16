@@ -1,0 +1,220 @@
+.createPage{
+    display: flex;
+    margin-left: 3%;
+    color:white;
+    flex-direction: column;
+}
+input{
+    background:none;
+    border-radius: 15px;
+    color:white;
+    height: 57px;
+    padding-left: 10px;
+    font-size: medium;
+    border:none;
+}
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+select{
+    border:none;
+}
+
+::placeholder{
+    color: #bdbebd
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+
+.cityAndDate{
+    display:flex;
+    flex-wrap: wrap;
+    margin-bottom: 4%  ;
+}
+
+.cityAndDate input{
+    background-image: linear-gradient(rgba(149, 125, 205, 0.75),rgba(82, 61, 127, 0.75)) ;
+}
+
+.city{
+    width: 30%;
+}
+.city input {
+    width: 60%;
+    min-width:150px;
+}
+.date{
+    width: 70%;
+    min-width: 400px;
+}
+.date input {
+    width: 12%;
+    min-width: 100px;
+    font-size: large;
+}
+
+.meteorologicalInformation{
+    width: 90%;
+    padding-top: 50px;
+    padding-bottom: 94px;
+    display: flex;
+    padding-left: 3vh;
+    background-image: linear-gradient(rgba(149, 125, 205, 0.29),rgba(82, 61, 127,  0.5)) ;
+    border-radius: 15px;
+    flex-wrap: wrap;
+}
+
+select{
+    background: none;
+    background-image: linear-gradient(rgba(149, 125, 205,0.75),rgba(82, 61, 127,0.75)) ;
+    border-radius: 15px;
+    height: 57px;
+    color:white
+}
+option{
+    background-color:rgb(149, 125, 205)
+}
+
+
+option:checked {
+  background-color: black;
+}
+
+.boxWeatherAndTurn{
+    width: 30%;
+    min-width: 260px;
+}
+.weatherAndTurn{
+    display: flex;
+    align-items:last baseline;
+    margin-left: 1%;
+}
+
+.weatherAndTurn p{
+    width: 91px;
+    height: 57px;
+    display: flex;
+    text-align: center;
+    background-image: linear-gradient(rgba(149, 125, 205,0.75),rgba(82, 61, 127,0.75)) ;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+.weatherAndTurn select{
+    width: 158px;
+}
+.weather{
+    margin-right: 2%;
+}
+
+.boxMaxMinPreHumWind{
+    min-width: 350px;
+    width: 70%;
+}
+
+.maxAndMinTemp{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.maxAndMinTemp input{
+    background-image: linear-gradient(rgba(149, 125, 205,0.75),rgba(82, 61, 127,0.75)) ;
+    width: 74px;
+    text-align: center;
+    font-size:large;
+}
+
+.maxTemp{
+    width: 65%;
+    min-width: 350px;
+}
+
+.minTemp{
+    width: 35%;
+}
+
+.weatherStatistics{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.humidityInput,
+.windSpeedInput,
+.precipitationInput
+{
+    display: flex;
+    align-items: first baseline;
+    background-image: linear-gradient(rgba(149, 125, 205,0.5),rgba(82, 61, 127,0.75)) ;
+    width: 85px;
+    border-radius: 15px;
+    font-size:large;
+}
+
+.windSpeedInput{
+    font-size: small !important;
+}
+.weatherStatistics input{
+    width: 35px;
+    text-align: center;
+}
+
+.precipitation{
+   width : 32.5%;
+   display: flex;
+   flex-direction: column;
+   min-width: 200px;
+}
+
+.humidity{
+    width : 32.5%;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+.windSpeed{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.buttons{
+    width: 90%;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+
+button{
+    border-radius:100px;
+    background-image: linear-gradient(rgba(149, 125, 205),rgba(82, 61, 127));
+    margin-top: 5vb;
+    margin-bottom:3vb;
+    height: 58px;
+    color: white;
+    width: 274px;
+    border: none;
+    margin-left: 30px;
+    cursor:pointer;
+}
+
+button:hover{
+    background-image: linear-gradient(rgba(149, 125, 205,0.5),rgba(82, 61, 127));
+}
+
+
+.mensagem__erro {
+    font-size: 12px;
+    margin-left: 5px;
+    color: yellow;
+    margin-bottom: 20px;
+  }

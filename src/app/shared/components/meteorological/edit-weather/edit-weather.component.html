@@ -1,1 +1,148 @@
-<p>edit-weather works!</p>
+<div class="createPage">
+    <h1>Cadastro Meteorológico</h1>
+    <form [formGroup]="weather">
+        <div class="cityAndDate">
+            <div class="city"> 
+                <h2>Cidade</h2>
+                <input 
+                type="textarea"
+                id="cidade"
+                formControlName="city"
+                placeholder="Digite a Cidade"
+                required="true"
+                >
+                <div class="mensagem__erro" *ngIf="weather.get('city')?.errors?.['required']  && weather.get('city')?.touched" >
+                    Cidade é obrigatória.
+                </div>
+                <div class="mensagem__erro" *ngIf="weather.get('city')?.errors?.['minlength']  && weather.get('city')?.touched " >
+                    Cidade de ter no mínimo 3 caracteres.
+                </div>
+            </div>
+            <div class="date">
+                <h2>Data</h2>
+                <input 
+                type="date"
+                id="date"
+                formControlName="weatherDate"
+                >
+                <div class="mensagem__erro" *ngIf="weather.get('weatherDate')?.errors?.['required']  && weather.get('weatherDate')?.touched" >
+                    Data é obrigatória.
+                </div>
+            </div>
+        </div>
+        <div class="meteorologicalInformation">
+            <div class="boxWeatherAndTurn">
+                <div class="weatherAndTurn">
+                    <div class="weather">
+                        <h3>Tempo</h3>
+                        <select  formControlName="morningWeather">
+                            <option value="">Selecione um Clima</option>
+                            <option value="SUNNY">Ensolarado</option>
+                            <option value="SUNANDCLOUDY">Ensolarado com Nuvens</option>
+                            <option value="STORM">Tempestade Forte</option>
+                            <option value="CLOUDY">Nublado</option>
+                            <option value="RAINING">Chuvoso</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h3>Turno</h3>
+                        <p>Manhã</p>
+                    </div>
+                </div>
+                <div class="weatherAndTurn" >
+                    <div class="weather">
+                        <select formControlName="nightWeather">
+                            <option value="">Selecione um Clima</option>
+                            <option value="STORM">Tempestade Forte</option>
+                            <option value="CLOUDY">Nublado</option>
+                            <option value="RAINING">Chuvoso</option>
+                        </select>
+                    </div> 
+                    <div class="turn">
+                        <p>Noite</p>
+                    </div>  
+                </div>
+            </div>    
+            <div class="boxMaxMinPreHumWind">
+                <div class="maxAndMinTemp">
+                    <div class="maxTemp">
+                        <h3>Temperatura Máxima</h3>
+                        <input 
+                        type="number"
+                        id="maxTemperature"
+                        formControlName="maxTemperature"
+                        >
+                        <div class="mensagem__erro" *ngIf="weather.get('maxTemperature')?.errors?.['required']  && weather.get('maxTemperature')?.touched" >
+                            Temperatura é obrigatória.
+                        </div>
+                    </div>
+                    <div class="minTemp">
+                        <h3>Temperatura Mínima</h3>
+                        <input 
+                        type="number"
+                        id="minTemperature"
+                        formControlName="minTemperature"
+                        >
+                        <div class="mensagem__erro" *ngIf="weather.get('minTemperature')?.errors?.['required']  && weather.get('minTemperature')?.touched" >
+                            Temperatura é obrigatória.
+                        </div>
+                    </div>
+                </div>
+                <div class="weatherStatistics">
+                    <div class="precipitation">
+                        <h3>Precipitação</h3>
+                        <div class="precipitationInput">
+                            <input 
+                            id="precipitation"
+                            formControlName="precipitation"
+                            type="number"> %
+                        </div>
+                        <div class="mensagem__erro" *ngIf="weather.get('precipitation')?.errors?.['required']  && weather.get('precipitation')?.touched" >
+                            Precipitação é obrigatória.
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <h3>Humidade</h3>
+                        <div class="humidityInput">
+                            <input  
+                            type="number"
+                            id="humidity"
+                            formControlName="humidity"
+                            > %
+                        </div>
+                        <div class="mensagem__erro" *ngIf="weather.get('humidity')?.errors?.['required']  && weather.get('humidity')?.touched" >
+                            Humidade é obrigatória.
+                        </div>
+                    </div>
+                    <div class="windSpeed">
+                        <h3>Velocidade do Vento</h3>
+                        <div class="windSpeedInput">
+                            <input 
+                            type="number"
+                            id="windSpeed"
+                            formControlName="windSpeed"
+                            > km/h
+                        </div>
+                        <div class="mensagem__erro" *ngIf="weather.get('windSpeed')?.errors?.['required']  && weather.get('windSpeed')?.touched" >
+                            Velocidade do vento é obrigatória.
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+        <div class="buttons">
+        <button
+        [routerLink]="['/list']"
+        (click)="cancelNotification()"
+        >
+            Cancelar
+        </button>
+        <button
+        type="submit"
+        (click)="editWeather()"
+        >
+            Atualizar
+        </button>
+        </div>
+    </form>
+</div>
