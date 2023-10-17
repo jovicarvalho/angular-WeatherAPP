@@ -45,7 +45,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   searchSevenDays() {
-     this.service.getByCity(this.cityName).subscribe({
+     this.service.getWeekInCity(this.cityName).subscribe({
       next:(citys) => {
         this.sevenDays.emit(citys);
         this.errorSevenDays = false;
