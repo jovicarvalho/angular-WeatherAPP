@@ -32,12 +32,15 @@ export class ListWeatherComponent implements OnInit {
   }
 
   buscarCidade(){
-    this.service.getByCity(this.cityName).subscribe((listOfCitys)=>{
-      this.listOfCitys = listOfCitys})
+    this.service.getByCity(this.cityName, this.skip).subscribe((listOfCitys)=>{
+      this.listOfCitys = listOfCitys.weathers
+      this.totalPages = listOfCitys.totalPages 
+    })
   
     if(this.cityName== "" ){
       this.service.getAll(this.skip).subscribe((listOfCitys)=>{
         this.listOfCitys = listOfCitys.weathers;
+        this.totalPages = listOfCitys.totalPages; 
       })
     }
   }
@@ -48,10 +51,17 @@ export class ListWeatherComponent implements OnInit {
     this.service.getAll(this.skip).subscribe((listOfCitys)=>{
       this.listOfCitys = listOfCitys.weathers;
       this.pageNumber++
-    })}else if(this.pageNumber = this.totalPages){
+    })}else if(this.cityName != "" && this.pageNumber < this.totalPages){
+      this.skip++
+      this.service.getByCity(this.cityName, this.skip).subscribe((listOfCitys)=>{
+        this.listOfCitys = listOfCitys.weathers;
+        this.pageNumber++
+      })
+    }
+    else if(this.pageNumber = this.totalPages){
       this.toastr.info("","Não há mais páginas disponíveis")
     }
-  }
+  } 
 
     
    
@@ -65,8 +75,8 @@ export class ListWeatherComponent implements OnInit {
     })}else if(this.pageNumber>1 && this.cityName != ""){
       this.skip--
       this.pageNumber--
-      this.service.getByCity(this.cityName).subscribe((listOfCitys)=>{
-        this.listOfCitys = listOfCitys;
+      this.service.getByCity(this.cityName, this.skip).subscribe((listOfCitys)=>{
+        this.listOfCitys = listOfCitys.weathers;
       })
     }else{
       this.toastr.info("Você já está na página 1", "Impossível Retroceder")
