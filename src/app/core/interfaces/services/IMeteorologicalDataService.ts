@@ -3,8 +3,9 @@ import { MeteorologicalData } from '../IMeteorologicalData';
 import { IPagenableList } from '../IPagenableList';
 
 export interface IMeteorologicalDataService {
-    getByCity(city:string ):Observable<MeteorologicalData[]>;
+    getByCity(city:string, page:number ):Observable<IPagenableList>;
     getById(id:String):Observable<MeteorologicalData>;
+    getWeekInCity(city:string):Observable<MeteorologicalData[]>;
     getActualDayinCity(city: string): Observable<MeteorologicalData>;
     postMeteorologicalData(weather: MeteorologicalData):Observable<MeteorologicalData>;
     getAll(skip:number):Observable<IPagenableList>;
