@@ -26,9 +26,7 @@ export class ActualDayComponent implements OnInit {
 		windSpeed: 0
   };
 
-  listar(){
-    console.log(this.sevenDays);
-  }
+  
   @Output() sevenDays: MeteorologicalData[] = [];
 
   verifyifCityExistReturnsTitle():string{
