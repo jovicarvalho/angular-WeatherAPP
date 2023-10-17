@@ -18,9 +18,17 @@ export class MeteorologicalDataService implements IMeteorologicalDataService {
     private http: HttpClient
     ){ }
   
-  getByCity(city:string ){
-    let params = new HttpParams().set("city",city);
-    return this.http.get<MeteorologicalData[]>(this.API,{params})
+  getByCity(city:string, page:number ){
+    let params = new HttpParams()
+    .set("city",city)
+    .set("skip",page)
+    return this.http.get<IPagenableList>(this.API,{params})
+  }
+
+  getWeekInCity(city:string){
+    let params = new HttpParams()
+      .set("cityName",city);
+    return this.http.get<MeteorologicalData[]>(this.API,{params});
   }
 
   getById(id:string):Observable<MeteorologicalData>{
